@@ -20,6 +20,10 @@ document.querySelector(".AddTaskBtn").addEventListener("click",function(event){
 });
 
 document.querySelector(".task-list").addEventListener("click",function(e){
+
+  if(e.target.className.includes("task__op_edit")){
+    ui.editTask(e);
+  }
     
  if(e.target.className.includes("task__op_delete")){
    ui.deleteTask(e);
@@ -32,3 +36,10 @@ document.querySelector(".task-list").addEventListener("click",function(e){
  
 });
 
+document.querySelector(".EditTaskBtn").addEventListener("click",function(e){
+ui.updateTask(e);
+});
+
+document.querySelector(".CancelTaskBtn").addEventListener("click",function(e){
+  ui.cancelTask();
+});

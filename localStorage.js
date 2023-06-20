@@ -53,3 +53,17 @@ LS.prototype.completeTask = function(id){
     }
     localStorage.setItem("task",JSON.stringify(tasks));
 }
+
+LS.prototype.findTask = function(id){
+    let tasks = this.fetchTask();
+    return tasks.find((task)=>task.id===id);
+}
+
+LS.prototype.updateTask = function(id,title){
+    let tasks = this.fetchTask();
+    let index = tasks.findIndex((task)=>task.id===id);
+
+    tasks[index].title = title;
+    localStorage.setItem("task",JSON.stringify(tasks));
+    
+}
