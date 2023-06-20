@@ -4,6 +4,7 @@ import Task from "./task.js";
 import LS from "./localStorage.js";  
 
 const ui = new UI();
+ui.showAllTasks();
 
 document.querySelector(".AddTaskBtn").addEventListener("click",function(event){
 
